@@ -52,6 +52,37 @@ document.querySelector("#botonConfirmar").onclick = function () {
 
         //Mostrar Cotizaciones
 
+        Promise.all([
+            fetch(`https://api.frankfurter.dev/v1/${fecha[0].value}?base=${base[0].value}`).then(res => res.json()),
+            fetch(`https://api.frankfurter.dev/v1/currencies`).then(res => res.json())
+        ])
+            .then(([monedaJSON, nombresJSON]) => {
+
+                if ($("#titleCotizaciones").hidden = true) {
+                    $("#titleCotizaciones").show();
+                }
+
+                $("#containerCotizaciones").empty();
+
+                let base = base[0].value;
+                let cotizaciones = monedaJSON.rates;
+                cotizaciones[base] = 1;
+
+                for (const moneda in simbolos) {
+                    const card = $("<div>", {
+                        html: ` <h1>${moneda}</h1>
+                                <h2 id="nombreMoneda">${nombresJSON[moneda]}</h2>
+                                <p>1${simbolos[base[0].value]} = ${cotizaciones[moneda]} ${simbolos[moneda]}</p>
+                                <input min="0" placeholder="${base[0].value}" type="number" id="monedaBase">
+                                <input placeholder="${moneda}" type="number" id="cotizacion" disabled>
+                                <button class="botonConvertir">Convertir</button>`,
+                        class: "cambio"
+                    });
+
+                    $("#containerCotizaciones").append(card);
+                }
+            })
+            .catch(error => console.error(error));
     } else {
         alert("Debes seleccionar una moneda base y una fecha.");
     }
