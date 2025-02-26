@@ -80,6 +80,8 @@ document.querySelector("#botonConfirmar").onclick = function () {
                     });
 
                     $("#containerCotizaciones").append(card);
+
+                    convertir(card.find(".botonConvertir"), cotizaciones[moneda], card.find("#monedaBase")[0], card.find("#cotizacion")[0]);
                 }
             })
             .catch(error => console.error(error));
@@ -89,3 +91,9 @@ document.querySelector("#botonConfirmar").onclick = function () {
 }
 
 // Convertir valores
+
+function convertir(botonActual, moneda, monedaBase, output) {
+    botonActual.click(function () {
+        output.value = `${monedaBase.value * moneda}`;
+    });
+}
