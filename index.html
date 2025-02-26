@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exchange Rates</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <h1 id="title">Exchange Rates</h1>
+
+    <div id="contenedorSelectores">
+        <div id="containerMonedaBase">
+            <label id="labelMonedaBase">Moneda base:</label>
+            <select id="base">
+                <option value="" disabled selected>Moneda base</option>
+            </select>
+        </div>
+
+        <div id="containerFecha">
+            <label id="labelFecha">Fecha deseada:</label>
+            <input type="date" id="fecha">
+        </div>
+    </div>
+
+    <button id="botonConfirmar">Confirmar</button>
+
+    <h2 hidden id="titleCotizaciones">Cotizaciones</h2>
+
+    <div id="containerCotizaciones"></div>
+
+    <script src='main.js'></script>
+</body>
+
+</html>
