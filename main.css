@@ -1,0 +1,80 @@
+* {
+    user-select: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: rgb(23, 36, 43);
+}
+
+#title {
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#labelMonedaBase {
+    font-weight: bolder;
+}
+
+#base {
+    margin-top: 0.25em;
+    padding: 0.15em;
+
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.5em;
+}
+
+#containerMonedaBase {
+    display: flex;
+    flex-direction: column;
+    max-width: 10em;
+}
+
+#labelFecha {
+    font-weight: bolder;
+}
+
+#fecha {
+    margin-top: 0.25em;
+    padding: 0.15em;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0.5em;
+}
+
+#containerFecha {
+    display: flex;
+    flex-direction: column;
+    max-width: 10em;
+
+}
+
+#contenedorSelectores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#botonConfirmar {
+    display: block;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    margin: 1.5em auto;
+}
+
+#titleCotizaciones {
+    text-align: center;
+    margin: 2.5em auto 1em;
+    text-decoration: underline;
+}
+
+#containerCotizaciones {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    max-width: 94.5em;
+    margin: auto;
+}
